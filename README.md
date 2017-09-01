@@ -13,5 +13,5 @@
 ## Repos
 
 * [Demo from sildes](https://gitlab.com/TemplateMonster/PlasmaPlatform/Frontend/Test/scaffolder)
-* [Scaffolder for API](https://gitlab.com/TemplateMonster/PlasmaPlatform/Frontend/tm-service-dummy)
-* [Base class for Dummy](https://gitlab.com/TemplateMonster/PlasmaPlatform/Frontend/tm-service-api)
+* [Scaffolder for Service](https://gitlab.com/TemplateMonster/PlasmaPlatform/Frontend/Scaffolders/tm-service/edit)
+* [Base class for Service](https://gitlab.com/TemplateMonster/PlasmaPlatform/Frontend/tm-service-api)
