@@ -1,0 +1,89 @@
+<!DOCTYPE html><html lang="ru"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"><title>Testing Shorts #1</title><link href="css/styles.css" rel="stylesheet"><script data-main="js/presentation" src="js/requirejs/require.js"></script></head><body><form class="go-to-page" action="/select/slide" method="post"><fieldset><input type="text" maxlength="3" value="" placeholder="1"></fieldset></form><section class="progress"><div class="value"></div></section><section class="dark" id="slides"><article class="illustration illustration--jest"></article><article class="center qrcode var-2"><div class="wrapper"><div class="half"><h2>Jest</h2></div><div class="half"><img src="images/jest_link.svg" alt="QRCODE"></div><p><a href="https://facebook.github.io/jest/" data-click>https://facebook.github.io/jest/</a></p></div></article><article class="center code-9"><div class="wrapper"><pre><code class="bash">npm i -D jest
+</code></pre></div></article><article class="center code-4"><div class="wrapper"><pre><code class="javascript">// jest.config.js
+module.exports = {
+  "collectCoverage": true,
+  "collectCoverageFrom": [
+    "!**/__mocks__/**",
+    "!**/__tests__/**",
+    "source/*.js"
+  ],
+  "coverageDirectory": "./coverage/",
+  "coverageReporters": [
+    "clover",
+    "json",
+    "text",
+    "html"
+  ]
+}
+</code></pre></div></article><article class="center code-9"><div class="wrapper"><pre><code class="bash">./__tests__
+  ./index.js
+./index.js
+</code></pre></div></article><article class="center code-8"><div class="wrapper"><pre><code class="javascript">describe('Group', () => {
+  // …
+});
+</code></pre></div></article><article class="center code-6"><div class="wrapper"><pre><code class="javascript">describe('Group', () => {
+  describe('Sub Group', () => {
+    // …
+  });
+});
+</code></pre></div></article><article class="center code-6"><div class="wrapper"><pre><code class="javascript">describe('Group', () => {
+  it('Test Description', () => {
+    // …
+  });
+});
+</code></pre></div></article><article class="center code-6"><div class="wrapper"><pre><code class="javascript">describe('Group', () => {
+  it('Test Description', () => {
+    expect(0).toBe(0);
+  });
+});
+</code></pre></div></article><article class="center code-1"><div class="wrapper"><pre><code class="javascript">// package.json
+{
+//…
+"scripts": {
+    //…
+    "test": "jest"
+  },
+}
+</code></pre></div></article><article class="center code-9"><div class="wrapper"><pre><code class="bash">npm t
+</code></pre></div></article><article class="screen screen--coverage-1"></article><article class="screen screen--coverage-2"></article><article class="center qrcode var-2"><div class="wrapper"><div class="half"><h2>Expect</h2></div><div class="half"><img src="images/expect_link.svg" alt="QRCODE"></div><p><a href="https://facebook.github.io/jest/docs/en/expect.html" data-click>http://bit.ly/2vMzG09</a></p></div></article><article class="center code-9"><div class="wrapper"><pre><code class="bash">npm i -D nock
+</code></pre></div></article><article class="center qrcode var-2"><div class="wrapper"><div class="half"><h2>Nock</h2></div><div class="half"><img src="images/nock_link.svg" alt="QRCODE"></div><p><a href="https://github.com/node-nock/nock" data-click>https://github.com/node-nock/nock</a></p></div></article><article class="center code-1"><div class="wrapper"><pre><code class="javascript">import 'isomorphic-fetch';
+import nock from 'nock';
+import VendorService from '../index.js';
+
+const serviceUrl = 'https://api.tm.com/v1/';
+const token = 'iddqdidclip';
+</code></pre></div></article><article class="center code-3"><div class="wrapper"><pre><code class="javascript">it('Add social', async () => {
+  const answerExpected = { 
+    id: 103,
+    author_id: 966,
+    name: 'twitter',
+    link: 'https://twitter.com/@silentimp' 
+  };
+  const vendor = new VendorService(serviceUrl, token);
+  const social = await vendor.linkSocial(
+    'twitter', 
+    'https://twitter.com/@silentimp');
+  expect(social).toEqual(answerExpected);
+});
+</code></pre></div></article><article class="center code-2"><div class="wrapper"><pre><code class="javascript">nock(/[.]+/)
+  .post('/authors/v1/authors/profile/social-account')
+  .reply(201, answerExpected);
+</code></pre></div></article><article class="center code-5"><div class="wrapper"><pre><code class="javascript">it('Add social', async () => {
+  const answerExpected = { 
+    id: 103,
+    author_id: 966,
+    name: 'twitter',
+    link: 'https://twitter.com/@silentimp' 
+  };
+  
+  nock(/[.]+/)
+    .post('/authors/v1/authors/profile/social-account')
+    .reply(201, answerExpected);
+    
+    const vendor = new VendorService(serviceUrl, token);
+    const social = await vendor.linkSocial(
+      'twitter', 
+      'https://twitter.com/@silentimp');
+    expect(social).toEqual(answerExpected);
+});
+</code></pre></div></article><article class="contacts center qrcode"><div class="wrapper"><div class="about-speaker half"><p class="name">Антон Немцев</p><p class="link">http://silentimp.info/</p><p class="twitter">@silentimp</p><p class="email">thesilentimp@gmail.com</p><p class="skype">skype: ravencry</p></div><div class="half"><img src="images/repo_link.svg" alt="QRCODE cо ссылкой на доклад"></div><p><a href="https://github.com/SilentImp/testShort" data-click>http://bit.ly/2eogzn4</a></p></div></article></section></body></html>
